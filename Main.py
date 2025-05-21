@@ -3,7 +3,7 @@ import time
 from Bubblesort import Bubblesort, Bubblesort_with_steps
 from Bogosort import Bogosort, Bogosort_with_steps
 from TwoPointSort import TwoPointSort
-from MergeSort import MergeSort
+from MergeSort import MergeSort, MergeSort_WithSteps
 from SelectionSort import SelectionSort
 
 from Utilities import run_sort, run_step_by_step_demo, clear_console
@@ -23,7 +23,7 @@ def get_sorting_algorithms():
         "3": {
             "name": "Merge Sort",
             "function": MergeSort,
-            "with_steps": None  # add when available
+            "with_steps": MergeSort_WithSteps
         },
         "4": {
             "name": "Selection Sort",
