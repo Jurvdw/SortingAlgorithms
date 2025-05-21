@@ -1,7 +1,7 @@
 import random
 import time
 from Bubblesort import Bubblesort, Bubblesort_with_steps
-from Bogosort import Bogosort
+from Bogosort import Bogosort, Bogosort_with_steps
 from TwoPointSort import TwoPointSort
 from MergeSort import MergeSort
 from SelectionSort import SelectionSort
@@ -18,7 +18,7 @@ def get_sorting_algorithms():
         "2": {
             "name": "Bogo Sort",
             "function": Bogosort,
-            "with_steps": None  # not visualized
+            "with_steps": Bogosort_with_steps
         },
         "3": {
             "name": "Merge Sort",
