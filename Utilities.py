@@ -69,27 +69,30 @@ def visualize_sorting_steps(steps):
         max_height = max(data)
         bar_char = "█"
         width = len(data)
+        column_width = 3
 
         print(f"Step {step_number + 1} of {len(steps)} | Comparing indices {i} and {j}\n")
 
-        # Build the chart row by row from top (max) to bottom (1)
         for level in range(max_height, 0, -1):
             row = ""
             for idx, val in enumerate(data):
                 if val >= level:
                     if idx == i:
-                        row += "\033[91m" + bar_char + "\033[0m  "  # Red
+                        row += f"\033[91m{bar_char.center(column_width)}\033[0m"
                     elif idx == j:
-                        row += "\033[92m" + bar_char + "\033[0m  "  # Green
+                        row += f"\033[92m{bar_char.center(column_width)}\033[0m"
                     else:
-                        row += bar_char + "  "
+                        row += bar_char.center(column_width)
                 else:
-                    row += "   "
+                    row += " " * column_width
             print(row)
 
-        # Print index numbers below bars
-        value_row = " ".join(f"{val:2}" for val in data)
+        # Print index numbers below bars, centered
+        value_row = ""
+        for val in data:
+            value_row += f"{str(val).center(column_width)}"
         print(value_row)
+
 
     # Step by step loop
     step_index = 0
