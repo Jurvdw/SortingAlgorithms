@@ -48,8 +48,8 @@ def _merge_with_steps(arr, start, mid, end, steps):
     k = start
 
     while i < len(left) and j < len(right):
-        # Save current array state and comparison indices
-        steps.append((arr[:], k, mid + j if left[i] > right[j] else start + i))
+        # Log before comparison and modification
+        steps.append((arr[:], start + i, mid + j))
         if left[i] <= right[j]:
             arr[k] = left[i]
             i += 1
@@ -59,13 +59,13 @@ def _merge_with_steps(arr, start, mid, end, steps):
         k += 1
 
     while i < len(left):
+        steps.append((arr[:], start + i, k))
         arr[k] = left[i]
-        steps.append((arr[:], k, start + i))
         i += 1
         k += 1
 
     while j < len(right):
+        steps.append((arr[:], mid + j, k))
         arr[k] = right[j]
-        steps.append((arr[:], k, mid + j))
         j += 1
         k += 1

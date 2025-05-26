@@ -2,7 +2,7 @@ import random
 import time
 from Bubblesort import Bubblesort, Bubblesort_with_steps
 from Bogosort import Bogosort, Bogosort_with_steps
-from TwoPointSort import TwoPointSort
+from TwoPointSort import TwoPointSort, TwoPointSort_With_Steps
 from MergeSort import MergeSort, MergeSort_WithSteps
 from SelectionSort import SelectionSort
 
@@ -33,7 +33,7 @@ def get_sorting_algorithms():
         "5": {
             "name": "Two-Point Sort",
             "function": TwoPointSort,
-            "with_steps": None
+            "with_steps": TwoPointSort_With_Steps
         },
     }
 
